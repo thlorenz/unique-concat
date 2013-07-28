@@ -15,17 +15,36 @@ console.log(res);
 
     npm install unique-concat
 
-## Note
+## API
 
-Works only with types that can be properly hashed, which means that they need to have a sensible `.toString()` implementation
+###*function uniqueConcat(arr1, arr2[, identity])*
+```
+/**
+ * Concatenates two arrays, removing duplicates in the process and returns one array with unique values.
+ * In case the elements in the array don't have a proper built in way to determine their identity,
+ * a custom identity function must be provided.
+ *
+ * As an example, {Object}s all return '[ 'object' ]' when .toString()ed and therefore require a custom
+ * identity function.
+ *
+ * @name exports
+ * @function unique-concat
+ * @param arr1 {Array} first batch of elements
+ * @param arr2 {Array} second batch of elements
+ * @param identity {Function} (optional) supply an alternative way to get an element's identity
+ */
+```
 
-Types that work as expected: `int`, `string`
+## Identity function example
 
-Types that work with caveats: `float` (if one float is part of the array, all numbers are converted to string)
+```js
+var identity = function (obj) { return obj.a; }
+var res = concat([{ a: 1 }, { a: 2, b: 1}], [{ a: 2, b: 2 }, { a: 3 }], identity);
+console.log(res);
+// => [ { a: 1 }, { a: 2, b: 2 }, { a: 3 } ]
+```
 
-Types that don't work: `object` since `obj.toString === '[ object ]'` for all objects.
-
-For more information see [tests](https://github.com/thlorenz/unique-concat/blob/master/test/index.js)
+For more examples see [tests](https://github.com/thlorenz/unique-concat/blob/master/test/index.js)
 
 ## License
 
