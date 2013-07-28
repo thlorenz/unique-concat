@@ -2,7 +2,7 @@
 
 [![testling badge](https://ci.testling.com/thlorenz/unique-concat.png)](https://ci.testling.com/thlorenz/unique-concat)
 
-Merges two arrays, removing duplicates in the process and returns one array with unique values.
+Concatenates two arrays, removing duplicates in the process and returns one array with unique values.
 
 ```js
 var concat = require('unique-concat');
