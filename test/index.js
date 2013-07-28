@@ -68,3 +68,15 @@ test('\nargument validation', function (t) {
   t.throws(function () { concat([], 2) }, /Second argument is not an array/)
   t.end()
 })
+
+test('\ncustom identity function', function (t) {
+  var identity = function (obj) { return obj.a; }
+  var res = concat([{ a: 1 }, { a: 2, b: 1}], [{ a: 2, b: 2 }, { a: 3 }], identity);
+  t.deepEqual(res, [{ a: 1 }, { a: 2, b: 2 }, { a: 3 }], 'returns set of object with unique "a" property values')
+  t.end()
+})
+
+test('\nnon-function passed as identity', function (t) {
+  t.throws(function () { concat([1], [2], 'not a function') }, /Third argument should be a function/)
+  t.end()
+})
