@@ -1,6 +1,6 @@
 {
   "name": "unique-concat",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Concatenates two arrays, removing duplicates in the process and returns one array with unique values.",
   "main": "index.js",
   "scripts": {
