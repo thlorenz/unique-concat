@@ -48,7 +48,11 @@ test('\nstrings: concating two non-empty arrays with non-unique values', functio
 
 test('\nfloats: concating two non-empty arrays with non-unique values', function (t) {
   var res = concat([ 1.1, 2.1, 3.1 ], [ 1.1, 2.2, 3.1, 4, 5, 6])
-  t.deepEqual(res, [ '4', '5', '6', '1.1', '2.1', '3.1', '2.2' ])
+
+  // FF seems to order these differently (by weird logic) than other browers, so we need to sort to make the test consistent
+  res = res.sort(function (a, b) { return a < b ? -1 : 1 });
+
+  t.deepEqual(res, [ '1.1', '2.1', '2.2', '3.1', '4', '5', '6' ])
   t.end()
 })
 
