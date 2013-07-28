@@ -1,6 +1,6 @@
 {
   "name": "unique-concat",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Concatenates two arrays, removing duplicates in the process and returns one array with unique values.",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,14 @@
     "tap": "~0.4.3",
     "testling": "~1.5.1"
   },
-  "keywords": [ "concat", "concatenate", "Array", "unique", "duplicates", "hash" ],
+  "keywords": [
+    "concat",
+    "concatenate",
+    "Array",
+    "unique",
+    "duplicates",
+    "hash"
+  ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
