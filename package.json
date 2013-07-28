@@ -23,7 +23,7 @@
     "tap": "~0.4.3",
     "testling": "~1.5.1"
   },
-  "keywords": [],
+  "keywords": [ "concat", "concatenate", "Array", "unique", "duplicates", "hash" ],
   "author": {
     "name": "Thorsten Lorenz",
     "email": "thlorenz@gmx.de",
