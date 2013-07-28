@@ -2,7 +2,7 @@
 /*jshint asi: true */
 
 var test = require('tape')
-var concat = require('..')
+var concat = require('../')
 
 test('\nconcating two empty arrays', function (t) {
   var res = concat([], [])
